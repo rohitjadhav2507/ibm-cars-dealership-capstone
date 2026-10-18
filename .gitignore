@@ -128,3 +128,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# GitHub workflows (avoids PAT missing workflow scope)
+.github/
