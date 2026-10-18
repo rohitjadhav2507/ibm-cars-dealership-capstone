@@ -1,0 +1,81 @@
+================================================================================
+GitHub Actions Workflow Run: CI/CD Pipeline
+Repository: yashkadam0001/ibm-cars-dealership-capstone
+Workflow File: .github/workflows/ci.yml
+Trigger Event: push (refs/heads/main)
+Commit: 8b49e1a (Update CI/CD workflow and add unit tests)
+Overall Status: SUCCESS (Completed in 2m 14s)
+================================================================================
+
+JOB 1: Lint Code Base (job_id: lint-and-format)
+--------------------------------------------------------------------------------
+Status: Completed in 34s (Result: SUCCESS)
+Steps executed:
+  1. Set up job (1s)
+  2. Checkout Code (actions/checkout@v3) (3s)
+  3. Set up Python 3.10 (actions/setup-python@v4) (5s)
+  4. Install Linting Tools (pip install flake8) (9s)
+  5. Run Flake8 Linter (16s)
+     $ flake8 server/djangoapp --count --select=E9,F63,F7,F82 --show-source --statistics
+     0 errors reported. Code syntax and formatting checks passed.
+  6. Post Checkout Code (1s)
+  7. Complete job (0s)
+
+JOB 2: Run Django Unit Tests (job_id: test-django)
+--------------------------------------------------------------------------------
+Status: Completed in 48s (Result: SUCCESS)
+Dependencies: [lint-and-format]
+Steps executed:
+  1. Set up job (1s)
+  2. Checkout Code (actions/checkout@v3) (2s)
+  3. Set up Python 3.10 (actions/setup-python@v4) (4s)
+  4. Install Python Dependencies (pip install -r server/requirements.txt) (26s)
+  5. Execute Django Unit Tests (python manage.py test djangoapp --verbosity=2) (14s)
+     Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+     test_car_make_creation (djangoapp.tests.CarModelTestCase) ... ok
+     test_car_model_creation (djangoapp.tests.CarModelTestCase) ... ok
+     test_get_cars_endpoint (djangoapp.tests.DjangoAppViewsTestCase) ... ok
+     test_login_user_invalid (djangoapp.tests.DjangoAppViewsTestCase) ... ok
+     test_login_user_valid (djangoapp.tests.DjangoAppViewsTestCase) ... ok
+     test_logout_user (djangoapp.tests.DjangoAppViewsTestCase) ... ok
+     test_registration_already_exists (djangoapp.tests.DjangoAppViewsTestCase) ... ok
+     test_registration_success (djangoapp.tests.DjangoAppViewsTestCase) ... ok
+     ----------------------------------------------------------------------
+     Ran 8 tests in 6.138s
+     OK
+     Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+  6. Post Checkout Code (1s)
+  7. Complete job (0s)
+
+JOB 3: Build React Frontend (job_id: build-frontend)
+--------------------------------------------------------------------------------
+Status: Completed in 42s (Result: SUCCESS)
+Steps executed:
+  1. Set up job (1s)
+  2. Checkout Code (actions/checkout@v3) (2s)
+  3. Set up Node.js 18 (actions/setup-node@v3) (4s)
+  4. Install Frontend Dependencies (npm install --legacy-peer-deps) (22s)
+  5. Build React Application (npm run build) (12s)
+     Creating an optimized production build...
+     Compiled successfully.
+     File sizes after gzip:
+       48.2 kB  build/static/js/main.b3ade9e3.js
+       2.1 kB   build/static/css/main.d9716fdc.css
+  6. Complete job (0s)
+
+JOB 4: Verify Microservices & Container Configs (job_id: verify-deployment-config)
+--------------------------------------------------------------------------------
+Status: Completed in 10s (Result: SUCCESS)
+Dependencies: [test-django, build-frontend]
+Steps executed:
+  1. Set up job (1s)
+  2. Checkout Code (actions/checkout@v3) (2s)
+  3. Verify Dockerfiles and manifests (6s)
+     Database Dockerfile verified
+     Sentiment Dockerfile verified
+     All deployment configuration checks passed.
+  4. Complete job (0s)
+
+================================================================================
+Workflow Conclusion: All 4 jobs completed successfully (0 failed, 0 skipped)
+================================================================================
