@@ -1,11 +1,11 @@
 # Car Dealerships Review & Management Web Application
 
-[![CI/CD Pipeline](https://github.com/yashkadam0001/ibm-cars-dealership-capstone/actions/workflows/ci.yml/badge.svg)](https://github.com/yashkadam0001/ibm-cars-dealership-capstone/actions/workflows/ci.yml)
+[![CI/CD Pipeline](https://github.com/rohitjadhav2507/ibm-cars-dealership-capstone/actions/workflows/ci.yml/badge.svg)](https://github.com/rohitjadhav2507/ibm-cars-dealership-capstone/actions/workflows/ci.yml)
 
 ### Project Overview
 - **Repository Name:** `ibm-cars-dealership-capstone`
 - **Project Name:** Car Dealerships Review & Inventory Management Web Application
-- **Author / Developer:** Yash Kadam ([yashkadam0001](https://github.com/yashkadam0001))
+- **Author / Developer:** Rohit Jadhav ([rohitjadhav2507](https://github.com/rohitjadhav2507))
 - **Course / Organization:** IBM Full Stack Cloud Developer Capstone Project
 
 ---
@@ -80,7 +80,7 @@ The platform is designed following a distributed microservices architecture:
 
 ### Step 1: Clone Repository
 ```bash
-git clone https://github.com/yashkadam0001/ibm-cars-dealership-capstone.git
+git clone https://github.com/rohitjadhav2507/ibm-cars-dealership-capstone.git
 cd ibm-cars-dealership-capstone
 ```
 
